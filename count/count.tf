@@ -22,8 +22,3 @@ resource "aws_key_pair" "deployer" {
   public_key = file("${path.module}/workkey.pub")
 }
 
-resource "aws_instance" "file_function" {
-  ami               = var.ami_id
-  instance_type     = "t2.micro"
-  key_name = aws_key_pair.deployer.key_name
-}
